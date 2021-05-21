@@ -9,7 +9,7 @@ public class DriverManager {
 
   public WebDriver startChrome() {
     // Chrome config
-    if (driver == null) {
+    if (this.driver == null) {
       WebDriverManager.chromedriver().setup();
       driver = new ChromeDriver();
     }
@@ -19,5 +19,9 @@ public class DriverManager {
   public void closeChrome() {
     // Chrome config
     driver.close();
+  }
+
+  public WebDriver getDriver() {
+    return driver;
   }
 }

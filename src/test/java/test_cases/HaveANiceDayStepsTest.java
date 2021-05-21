@@ -14,16 +14,13 @@ public class HaveANiceDayStepsTest {
   DriverManager driverManager = new DriverManager();
 
   @Before
-  public void init() {
-    driverManager.startChrome();
-  }
+  public void init() {}
 
-  @Steps
-  private final HaveANiceDaySteps haveANiceDaySteps =
-      new HaveANiceDaySteps(driverManager.startChrome());
+  @Steps HaveANiceDaySteps haveANiceDaySteps;
 
   @Test
   public void userCanChooseHowAreThey() throws InterruptedException {
+    haveANiceDaySteps.setDriver(driverManager.startChrome());
     haveANiceDaySteps.openMainPage();
     haveANiceDaySteps.selectOption("Good");
     haveANiceDaySteps.pressOnButtonNext();
