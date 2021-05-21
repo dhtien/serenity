@@ -30,16 +30,6 @@
     </dependencies>
 
     <build>
-        <testResources>
-            <testResource>
-                <directory>${project.basedir}/src/test/resources</directory>
-                <targetPath>resources</targetPath>
-            </testResource>
-            <testResource>
-                <directory>${project.basedir}/src/test/resources/META-INF</directory>
-                <targetPath>META-INF</targetPath>
-            </testResource>
-        </testResources>
         <plugins>
             <plugin>
                 <groupId>net.serenity-bdd.maven.plugins</groupId>
@@ -58,9 +48,12 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.20</version>
+                <version>3.0.0-M3</version>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testng.xml</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <!-- <forkMode>never</forkMode> -->
                 </configuration>
             </plugin>
         </plugins>
