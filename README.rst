@@ -12,7 +12,7 @@ Running test
 ====================================
     + Open commandline tool
     + cd {directory of project}
-    + mvn clean test
+    + mvn test -Dsurefire.suiteXmlFile=login.xml -Dbrowser=firefox
 
 Generated results
 ====================================
